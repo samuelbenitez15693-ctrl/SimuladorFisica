@@ -206,7 +206,7 @@ modulo = st.sidebar.radio(
 if modulo == "MRUA":
     st.title("Movimiento Rectilineo Uniformewnente Variado")
 
-    st.mardown("""
+    st.markdown("""
                ### Formulas
                - vf = v0 + a*t
                - x = v0*t + 0.5*a*t^2
