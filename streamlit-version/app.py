@@ -48,7 +48,7 @@ if "instrctivo_visto" not in st.session_state:
                     """)
         if st.button("Entendido"):
             st.session_state.instrctivo_visto = True
-            st.experimental_rerun()
+            st.rerun()
             st.stop()
 
 
