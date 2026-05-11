@@ -213,7 +213,7 @@ if modulo == "MRUA":
                - vf^2 = v0^2 + 2*a*x
                -x = 0.5*(v0 + vf) * t
                """)
-    col1, col2 = st.columnms(2)
+    col1, col2 = st.columns(2)
     with col1:
         v0= st.number_input(
             "Velocidad inicial v0 (m/s)",
