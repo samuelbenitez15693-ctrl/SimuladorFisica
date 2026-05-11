@@ -249,7 +249,7 @@ if modulo == "MRUA":
             st.error(error)
         else:
             st.success("Calculo completado")
-            c1,c2,c3,c5, = st.columns(5)
+            c1,c2,c3,c4,c5, = st.columns(5)
 
             with c1:
                 st.metric("Velocidad Inicial", f"{datos['v0']:.2f} m/s")
