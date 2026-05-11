@@ -11,10 +11,50 @@ st.set_page_config(
     page_icon=":rocket:",
     layout="centered",
 )
+
+#═════════════════════════════════════════════════════════════════
+#Instructivo inicial
+#═════════════════════════════════════════════════════════════════
+if "instrctivo_visto" not in st.session_state:
+    st.session_state.instrctivo_visto = False
+    if not st.session_state.instrctivo_visto:
+        st.title("Bienvenido al Simulador de Movimiento I")
+        st.markdown("""
+                    ¿Como usar esta aplicacion?
+                    Esta aplicacion permite resolver ejercicos de:
+                    - Movimiento Rectilineo Uniformemente Variado (MRUA)
+                    - Tiro Parabolico
+
+                    ### Pasos para usarla:
+                    1. Selecciona el modulo que deseas usar en la barra lateral.
+                    2. Ingresa los valores conocidos en los campos correspondientes.
+                    3. Haz click en el boton de calcular para obtener los resultados.
+                    4. Revisa los resultados y los pasos del calculo para entender como se resolvio el ejercicio.
+                    5. Explora las graficas para visualizar el movimiento.
+
+                    ### Formulas utilizadas:
+                    - MRUA:
+                    -Veloidad final: vf = v0 + a*t
+                    -Posicion: x = v0*t + 0.5*a*t^2
+                    -Tiempo: t = (vf - v0) / a
+                    -Aceleracion: a = (vf - v0) / t
+                    -Velocidad inicial: v0 = vf - a*t
+
+                    ### Tiro Parabolico
+                    -Posicion horizontal: x = v0x * t
+                    -Posicion vertical: y = v0y * t - 0.5 * g * t^2
+                    -Alcance: Alcance = v0^2 * sin(2*angulo) / g
+                    -Altura maxima: Altura = v0^2 * sin^2(angulo) / (2*g)
+                    """)
+        if st.button("Entendido"):
+            st.session_state.instrctivo_visto = True
+            st.experimental_rerun()
+            st.stop()
+
+
 # ═══════════════════════════════════════════════════════════════════
 #ESTILOS
-#═══════════════════════════════════════════════════════════════════
-
+#═══════════════════════════════════════    
 st.markdown("""
     <style>
            .main {
@@ -204,7 +244,7 @@ modulo = st.sidebar.radio(
 # ═══════════════════════════════════════════════════════════════════
 
 if modulo == "MRUA":
-    st.title("Movimiento Rectilineo Uniformewnente Variado")
+    st.title("Movimiento Rectilineo Uniformemente Variado")
 
     st.markdown("""
                ### Formulas
