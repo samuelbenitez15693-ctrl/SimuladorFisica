@@ -435,4 +435,4 @@ elif modulo == "Tiro Parabolico":
 # ═══════════════════════════════════════════════════════════════════
 #FOOTER
 # ═══════════════════════════════════════════════════════════════════
-st.marckdown(""" Proyecto de Fisica I """)
+st.markdown(""" Proyecto de Fisica I """)
